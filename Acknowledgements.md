@@ -1,4 +1,4 @@
-# ACKNOWLEDGEMENTS AND SOURCES
+# Acknowledgements and Data Sources
 
 - Firstly, the YouTube channel - Spatial eLearning (https://www.youtube.com/@spatialelearning) in setting up, navigating and effectively using GEE through a Python API setup like this, as well as providing a guide on a lot of the methods used throughout this script. 
 - Secondly, code and data resources such as the GEE Community Catalogue (https://gee-community-catalog.org/) and the Google Earth Engine API Docs (https://developers.google.com/earth-engine/apidocs) and Data Catalogue (https://developers.google.com/earth-engine/datasets) as well as other references for packages and libraries such as 'pylandstats' or 'resterio' which were used in the analysis. All links for documentation or sources can be found in the script.
