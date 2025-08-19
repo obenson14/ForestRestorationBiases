@@ -1,0 +1,16 @@
+name: gee-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - earthengine-api
+  - pandas
+  - numpy
+  - rasterio
+  - pylandstats
+  - tqdm
+  - requests
+  - pip
+  - pip:
+      - geemap
