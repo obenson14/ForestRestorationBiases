@@ -4,3 +4,5 @@ This repository conatains the Spatial Analysis workflow (designed to be run in J
 - This repository is private while reserach is ongoing, and will be made public at a later date, as will the filtered dataset created and analysed as part of this project
 
 - In the code, placeholder datasets are used since they are currently stored locally on my personal device, and GEE project name is removed as well. 
+
+- To run the code, the user needs a GEE kernel environment within Jupytern Notebooks (detailed in 'enironment.yml' and created using 'conda env create -f environments.yml', 'conda activate' in terminal), the requireed packages/libraries (detailed in 'requirements.txt', and install using 'pip install -r requirements.txt') and finally, a valid GEE account and project ID.
