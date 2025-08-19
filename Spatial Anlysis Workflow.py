@@ -1,6 +1,6 @@
 # SPATIAL ANALYSIS WORKFLOW TO RUN IN JUYPTER NOTEBOOKS USING GEE PYTHON API (WITH PLACEHOLDER DATASETS AND PROJECT ID
 
-Import Libraries
+# Import Libraries
 import ee
 import pandas as pd
 import numpy as np
