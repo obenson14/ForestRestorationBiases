@@ -1,0 +1,10 @@
+The following packages are required to run the workflow:
+- earthengine-api
+- pandas
+- numpy
+- rasterio
+- pylandstats
+- tqdm
+- requests
+
+As well as a GEE kernel environment within Jupytern Notebooks and valid GEE project ID 
