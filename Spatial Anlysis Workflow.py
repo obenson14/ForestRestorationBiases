@@ -17,7 +17,7 @@ warnings.filterwarnings("ignore")
 ee.Authenticate()
 ee.Initialize(project='PROJECT ID')
 
-# Load pre-processed dataset (from local storage in this case)
+# Load pre-processed dataset as .csv (from local storage)
 df = pd.read_csv("INPUT_DATASET")
 
 # Remapping the detailed GLC_FCS30D 35 landuse classes to 10 simplified ones
@@ -49,7 +49,7 @@ basic_class_names = {
     10: "Snow/Ice"
 }
 
-# Function to generate classified GLC image for a given buffer and band
+# Function to generate a classified GLC image for a given buffer and band
 def classify_glc(glc_collection, glc_band_name, buffer):
     '''
     Generates a landcover raster with remapped classes and clipped to the site location and buffer:
@@ -95,7 +95,7 @@ for index, row in tqdm(df.iterrows(), total=len(df), desc="Processing sites"):
         # Define GEE point geometry for study site location
         study_site = ee.Geometry.Point([lon, lat])
 
-        # Define study area (10km buffer) using buffer to clip data in meters
+        # Define study area (10km buffer)
         buffer_10km = study_site.buffer(10000)  
 
         # GLC DATA COLLECTION
@@ -132,7 +132,7 @@ for index, row in tqdm(df.iterrows(), total=len(df), desc="Processing sites"):
 
         # Loop through the differet buffer sizes 
         for buffer_label, buffer_radius in stats_buffers.items():
-            # create buffer geometry from new buffer sizes for each location
+            # Create buffer geometry from new buffer sizes for each location
             stats_buffer = study_site.buffer(buffer_radius)
 
             # Calculate land use class distribution histogram in buffer area
@@ -158,7 +158,7 @@ for index, row in tqdm(df.iterrows(), total=len(df), desc="Processing sites"):
 
             # Read downloaded GeoTIFF directly into memory using rasterio.MemoryFile
             # to writing temporary files to disk and so improves efficiency.
-            # Reference - https://rasterio.readthedocs.io/en/stable/topics/memory-files.html
+            # Documentation - https://rasterio.readthedocs.io/en/stable/topics/memory-files.html
 
             # Loop for retries added for scenarios where rasterio fails to read the GeoTIFF correctly
             # resulting in failed site. Tries up to 3 times before moving on
